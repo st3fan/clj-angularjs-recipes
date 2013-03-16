@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="recipes">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+  </head>
+
+  <body ng-controller="RecipesController">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Recipes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <ul class="nav nav-pills pull-left">
+        <li ng-class="{active: category == 'bacon'}">
+          <a href="#" ng-click="loadRecipes('bacon')">Bacon</a>
+        </li>
+        <li ng-class="{active: category == 'omelette'}">
+          <a href="#" ng-click="loadRecipes('omelette')">Omelette</a>
+        </li>
+        <li ng-class="{active: category == 'quiche'}">
+          <a href="#" ng-click="loadRecipes('quiche')">Quiche</a>
+        </li>
+        <li ng-class="{active: category == 'chicken'}">
+          <a href="#" ng-click="loadRecipes('chicken')">Chicken</a>
+        </li>
+        <li ng-class="{active: category == 'lobster'}">
+          <a href="#" ng-click="loadRecipes('lobster')">Lobster</a>
+        </li>
+      </ul>
+      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Ingredients</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="recipe in recipes">
+          <td><a href="{{recipe.href}}" target="_blank">{{recipe.title}}</a></td>
+          <td>{{recipe.ingredients}}</td>
+        </tr>
+      </table>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <!-- Application -->
+    <script src="index.js"></script>
+  </body>
+</html>
